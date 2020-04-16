@@ -42,7 +42,7 @@ public class RobotContainer {
       new RunCommand(() -> tankDriveSubsystem.drive(
           -driverOI.getY(GenericHID.Hand.kLeft), 
           -driverOI.getX(GenericHID.Hand.kRight)
-        )));
+        ), tankDriveSubsystem));
   }
 
   /**
