@@ -32,7 +32,7 @@ public class TankDriveSubsystem extends SubsystemBase {
   }
 
   public void drive(double leftSpeed, double rightSpeed) {
+    System.out.print("Speeds: leftSpeed: " + leftSpeed + " rightSpeed: " + rightSpeed + "\n");
     differentialDrive.tankDrive(leftSpeed, rightSpeed);
   }
-
 }

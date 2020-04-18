@@ -10,7 +10,7 @@ package frc.robot;
 import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.XboxController;
-import frc.robot.commands.TankDriveCommand;
+import frc.robot.commands.TimedAutoCommand;
 import frc.robot.subsystems.TankDriveSubsystem;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.RunCommand;
@@ -29,7 +29,7 @@ public class RobotContainer {
   // The robot's subsystems and commands are defined here...
   private final TankDriveSubsystem tankDriveSubsystem = new TankDriveSubsystem();
 
-  private final TankDriveCommand m_autoCommand = new TankDriveCommand(tankDriveSubsystem);
+  private final TimedAutoCommand m_autoCommand = new TimedAutoCommand(tankDriveSubsystem);
 
   /**
    * The container for the robot.  Contains subsystems, OI devices, and commands.
@@ -40,8 +40,8 @@ public class RobotContainer {
 
     tankDriveSubsystem.setDefaultCommand(
       new RunCommand(() -> tankDriveSubsystem.drive(
-          -driverOI.getY(GenericHID.Hand.kLeft), 
-          -driverOI.getX(GenericHID.Hand.kRight)
+          -driverOI.getRawAxis(Constants.LEFT_JOYSTICK_Y), 
+          -driverOI.getRawAxis(Constants.RIGHT_JOYSTICK_Y)
         ), tankDriveSubsystem));
   }
 

@@ -47,4 +47,9 @@ public final class Constants {
     public static final int LEFTENCODER_CB = 1;
     public static final int RIGHTENCODER_CA = 2;
     public static final int RIGHTENCODER_CB = 2;
+
+    // AUTO 
+    public static final double TIMED_AUTO_10SECS = 10.0;
+    public static final double AUTO_LEFTSPEED = 0.5;
+    public static final double AUTO_RIGHTSPEED = 0.5;
 }
